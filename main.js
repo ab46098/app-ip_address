@@ -76,9 +76,11 @@ class IpAddress {
 if(firstIpAddress!=null){
   ipv4And6ip=getIpv4MappedIpv6Address(firstIpAddress);
 }
-let jsonString =   '{"ipv4":"'+firstIpAddress+'", "ipv6" : "'+ipv4And6ip+'"}';
-let jsonval=JSON.stringify(jsonString);
-let jsonObj = JSON.parse(jsonval);
+let jsonObj =  {
+                    ipv4: firstIpAddress,
+                    ipv6: ipv4And6ip
+                };
+ 
 
 return callback(jsonObj, callbackError);
 }
